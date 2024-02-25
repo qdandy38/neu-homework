@@ -1,13 +1,18 @@
 <template>
   <header class="w-full h-[60px] bg-white flex justify-end p-2">
-    <button class="btn">
+    <button class="btn" @click="openMenu">
       <span class="line"></span>
       <span class="line"></span>
       <span class="line"></span>
     </button>
   </header>
 </template>
-<script setup></script>
+<script setup>
+const emit = defineEmits(["menuToggle"]);
+const openMenu = () => {
+  emit("menuToggle");
+};
+</script>
 <style lang="scss" scoped>
 .btn {
   @apply border
